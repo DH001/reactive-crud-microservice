@@ -1,0 +1,1 @@
+-- insert into customer (id, name) values ('test1','customer1');

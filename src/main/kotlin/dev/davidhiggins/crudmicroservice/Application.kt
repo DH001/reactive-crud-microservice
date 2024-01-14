@@ -11,6 +11,13 @@ import org.springframework.r2dbc.connection.init.ConnectionFactoryInitializer
 import org.springframework.r2dbc.connection.init.ResourceDatabasePopulator
 
 
+@SpringBootApplication
+class Application
+
+fun main(args: Array<String>) {
+	runApplication<Application>(*args)
+}
+
 @Configuration
 @EnableR2dbcRepositories
 class CustomConnectionFactoryInitializer  {
@@ -23,11 +30,3 @@ class CustomConnectionFactoryInitializer  {
 		return initializer
 	}
 }
-
-@SpringBootApplication
-class CrudMicroserviceApplication
-
-fun main(args: Array<String>) {
-	runApplication<CrudMicroserviceApplication>(*args)
-}
-

@@ -26,6 +26,13 @@ class ControllerConfig {
                 ServerResponse.ok().bodyValueAndAwait(customer)
             }
         }
+
+        DELETE("/customers/{id}") {
+            val id = it.pathVariable("id")
+            customerService.delete(id).let { _ ->
+                ServerResponse.noContent().buildAndAwait()
+            }
+        }
     }
 }
 
